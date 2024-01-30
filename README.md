@@ -1,7 +1,7 @@
 # Skeleton 
 #### Factory-Dependency-Injection-UnitTests-E2ETests
 
-## Skeleton 
+## Skeleton
 - TDD
 - Typescript
 - OOP
@@ -10,6 +10,7 @@
 - Unit Tests 
 - E2E Tests
 - Database in-memory
+- Swagger API Docs
 
 ### To run the project:
 
