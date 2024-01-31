@@ -25,8 +25,8 @@ const options = {
         },
         tags: [
             {
-                name: "User",
-                description: "User routes"
+                name: "Task",
+                description: "Task routes"
             }
         ],
         paths: tasksRouter,
