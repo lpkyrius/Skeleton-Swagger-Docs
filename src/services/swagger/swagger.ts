@@ -1,12 +1,13 @@
 import { Express, Request, Response } from 'express';
-import swaggerJsdoc from 'swagger-jsdoc';   // builds documentation
-import swaggerUi from 'swagger-ui-express'; // exposes documentation
+import swaggerJsdoc from 'swagger-jsdoc';   
+import swaggerUi from 'swagger-ui-express'; 
 import tasksRouter from '../../routes/tasks/tasks.router';
-
+import { version } from '../../../package.json'; 
+import { taskRouteDoc } from '../../routes/tasks/task.doc';
 
 require('dotenv').config();
 
-const options = {
+const options: swaggerJsdoc.Options = {
     definition: {
         openapi: '3.1.0',
         servers: [
@@ -21,7 +22,16 @@ const options = {
         ],
         info: {
             title: 'REST API Docs',
-            version: '1.0.0'
+            version
+        },
+        components: {
+            securitySchemas: {
+                bearerAuth: {
+                    type: 'http',
+                    scheme: 'bearer',
+                    bearerFormat: 'JWT',
+                },
+            },
         },
         tags: [
             {
@@ -29,29 +39,14 @@ const options = {
                 description: "Task routes"
             }
         ],
-        paths: tasksRouter,
+        paths: taskRouteDoc,
     },
-    components: {
-        securitySchemas: {
-            bearerAuth: {
-                type: 'http',
-                scheme: 'bearer',
-                bearerFormat: 'JWT',
-            },
-        },
-    },
-    security: [
-        {
-            bearerAuth: [],
-        },
-    ],
     apis: ['../../routes/tasks/tasks.router.ts']
 }
 
 const swaggerSpec = swaggerJsdoc(options);
 
-function swaggerDocs(app: Express){
-
+function swaggerDocs(app: Express, port: number){
     // Swagger page
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
