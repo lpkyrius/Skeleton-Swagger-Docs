@@ -15,6 +15,7 @@ async function startServer() {
         console.log(`\nListening on PORT ${PORT}... @ ${serverAddress}`);
         console.log(`\nDB connected @ ${process.env.DB_HOST}:${process.env.DB_PORT} DbName: ${process.env.DB_NAME}`);
         console.log(`\nDocs available @ ${process.env.SERVER_ADDRESS}:${PORT}/api-docs`);
+        console.log(`\nDocs JSON available @ ${process.env.SERVER_ADDRESS}:${PORT}/api-docs.json`);
         console.log(`\nGood to go!`);
     });
 }
