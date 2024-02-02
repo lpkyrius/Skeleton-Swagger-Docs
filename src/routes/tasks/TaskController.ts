@@ -16,7 +16,7 @@ class TaskController {
 
       const task = await this.taskService.add({ userId, summary });
 
-      return res.status(200).json(task);
+      return res.status(201).json(task);
     } catch (error: any) {
       console.error(`httpAddTask Error-> ${error}`);
       res.status(500).json({error: 'error attempting to add a task'});
@@ -27,7 +27,7 @@ class TaskController {
     try {
       const task = await this.taskService.list();
 
-      return res.status(201).json(task);
+      return res.status(200).json(task);
     } catch (error: any) {
       console.error(`httpListTasks Error-> ${error}`);
       res.status(500).json({error: 'error attempting to list tasks'});
@@ -54,6 +54,8 @@ class TaskController {
   async httpUpdateTask(req: Request, res: Response) {
     try {
       const taskToUpdate: Task = req.body;
+      const id = req.params.id;
+      taskToUpdate.id = id;
 
       if (!this.checkUserId(taskToUpdate.userId!))
         return res.status(400).json({ error: 'invalid userId' });

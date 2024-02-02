@@ -1,26 +1,19 @@
 [
   {
-    "id": "500994c6-b51b-4544-8dfb-ccced2b87e73",
+    "summary": "Updating user laptop Zoom and Microsoft Teams apps.",
     "userId": "533b7681-b1c3-4244-8a37-423ae7a3d8ac",
-    "summary": "Initial task summary #1 - from repository",
-    "created_at": "2023-12-24T16:17:18.622Z"
-  },
-  {
-    "id": "23c35874-d81e-4fd6-a942-3d9cb04bc87e",
-    "userId": "943b7681-b1c3-4244-8a37-423ae7a3d7bc",
-    "summary": "Initial task summary #2 - from repository",
-    "created_at": "2024-01-30T11:32:34.690Z"
+    "id": "500994c6-b51b-4544-8dfb-ccced2b87e73"
   },
   {
     "userId": "943b7681-b1c3-4244-8a37-423ae7a3d7bc",
     "summary": "Updating user laptop Zoom app.",
-    "id": "a6ac5d21-0c9a-4882-996c-86e7cb350b51",
-    "created_at": "2024-02-01T20:01:16.856Z"
+    "id": "8a02fdac-a361-4be8-a124-9d916b145e8e",
+    "created_at": "2024-02-02T11:06:12.154Z"
   },
   {
     "userId": "943b7681-b1c3-4244-8a37-423ae7a3d7bc",
-    "summary": "Updating user laptop Zoom app.",
-    "id": "4fb77c61-8231-49f4-9cbc-baf87bcc7e8c",
-    "created_at": "2024-02-01T20:20:13.385Z"
+    "summary": "Updating user laptop Zoom app, cleaning cookies.",
+    "id": "b8b7b05e-b703-4603-9d77-8fdfd842ad77",
+    "created_at": "2024-02-02T11:06:28.063Z"
   }
 ]
