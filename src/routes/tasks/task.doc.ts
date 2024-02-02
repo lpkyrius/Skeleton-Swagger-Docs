@@ -65,7 +65,7 @@ const return500 = {
     }
 };
 
-// tasksRouter.post('/task/add', async (req: Request, res: Response) => await (await taskFactory()).httpAddTask(req, res));
+// tasksRouter.post('/task/add', ...
 const taskAddSchema = {
     post: {
         tags: ['Task'],
@@ -100,7 +100,7 @@ const taskAddSchema = {
 };
 
 
-// tasksRouter.get('/task/list', async (req: Request, res: Response) => await (await taskFactory()).httpListTasks(req, res));
+// tasksRouter.get('/task/list', ...
 const taskListSchema = {
     get: {
         tags: ['Task'],
@@ -114,7 +114,7 @@ const taskListSchema = {
 };
 
 
-// tasksRouter.get   ('/task/find/:id'  , async (req: Request, res: Response) => await (await taskFactory()).httpFindById(req, res));
+// tasksRouter.get   ('/task/find/:id', ...
 const usersByIdSchema = {
     get: {
         tags: ['Task'],
@@ -138,7 +138,7 @@ const usersByIdSchema = {
 };
 
 
-// tasksRouter.put   ('/task/update/:id', async (req: Request, res: Response) => await (await taskFactory()).httpUpdateTask(req, res));
+// tasksRouter.put   ('/task/update/:id', ...
 const taskUpdateSchema = {
     put: {
         tags: ['Task'],
@@ -176,7 +176,6 @@ const taskUpdateSchema = {
         },
         responses:{
             200: return200,
-            400: return400,
             404: return404,
             500: return500,
         } 
@@ -186,88 +185,33 @@ const taskUpdateSchema = {
 
 
 // tasksRouter.delete('/task/delete/:id', async (req: Request, res: Response) => await (await taskFactory()).httpDeleteTask(req, res));
-
-
-
-
-
-
-// usersRouter.get   ('/users/confirm-email/:id/:uniqueString', handleRegisterOrUpdateEmailConfirmation); 
-//Not an API
-
-// usersRouter.get   ('/users/user-message', handleEmailConfirmationVerified); 
-//Not an API
-
-// // usersRouter.put   ('/users/update-user-email/:id',httpUpdateUserEmail);
-// const usersUpdateUserEmailSchema = {
-//     put: {
-//         tags: ['User'],
-//         summary: 'Update user email',
-//         description: 'Update the user email - it has its specific requirements and validations',
-//         parameters: [
-//             {
-//                 name: 'id',
-//                 in: 'path',
-//                 description: 'id of the user',
-//                 type: 'number',
-//                 example: '5678',
-//             },
-//         ],
-//         requestBody: {
-//             content: {
-//                 'application/json': {
-//                     schema: {
-//                         type: 'object',
-//                         properties: {
-//                             email: {
-//                                 type: 'string',
-//                                 description: 'Email of the user',
-//                                 example: 'john.doe@email.com'
-//                             },
-//                         }
-//                     }
-//                 }
-//             }
-//         },
-//         responses:{
-//             200: return200,
-//             400: return400,
-//             404: return404,
-//             409: return409,
-//             500: return500,
-//         } 
-//     }
-// };
-
-
-// usersRouter.delete('/users/delete/:id', handleUserDelete); 
-
-// const userDeleteUserSchema = {
-//     delete: {
-//         tags: ['User'],
-//         summary: 'Delete user',
-//         description: 'Delete a specific user by id',
-//         parameters: [
-//             {
-//                 name: 'id',
-//                 in: 'path',
-//                 description: 'id of the user',
-//                 type: 'number',
-//                 example: '5678',
-//             },
-//         ],
-//         responses:{
-//             200: return200,
-//             400: return400,
-//             404: return404,
-//             500: return500,
-//         } 
-//     }
-// };
+const taskDeleteSchema = {
+    delete: {
+        tags: ['Task'],
+        summary: 'Delete task',
+        description: 'Delete a specific task by its id',
+        parameters: [
+            {
+                name: 'id',
+                in: 'path',
+                description: 'id of the task',
+                type: 'string',
+                example: '500994c6-b51b-4544-8dfb-ccced2b87e73',
+            },
+        ],
+        responses:{
+            200: return200,
+            400: return400,
+            404: return404,
+            500: return500,
+        } 
+    }
+};
 
 export const taskRouteDoc = {
     '/task/list': taskListSchema,
     '/task/add': taskAddSchema,
     '/task/find/{id}': usersByIdSchema,
     '/task/update/{id}': taskUpdateSchema,
+    '/task/delete/{id}': taskDeleteSchema,
 };
